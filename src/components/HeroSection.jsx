@@ -53,14 +53,15 @@ const HeroSection = () => {
         </div>
         <div className="p-2 md:p-6 h-[260px] md:h-[500px] flex md:flex-row justify-center items-start md:items-center">
           <div className="flex-1 p-2">
-            <h1 className="text-sm md:text-5xl font-bold text-secondary hero-title">
+             <h1 className="text-sm md:text-[3rem] font-bold text-secondary leading-tight">
               {slides[currentSlide].title}
             </h1>
-            <p className="mt-4 text-xs md:text-xl hero-desc">
+            <p className="mt-4 text-sm md:text-[1.56rem] leading-relaxed">
               {slides[currentSlide].desc}
             </p>
             {slides[currentSlide].button && (
-              <button className="mt-2 px-4 py-1.5 bg-blue-500 text-white rounded-full">
+              <button className="mt-5 px-7 py-4 bg-blue-500 text-white text-[1.5rem] text-sm rounded-full self-start">
+
                 {slides[currentSlide].button}
               </button>
             )}
@@ -74,7 +75,7 @@ const HeroSection = () => {
             <img
               src={slides[currentSlide].image}
               alt="Slide Image"
-              className="mx-auto object-cover w-full md:w-[500px] h-[160px] md:h-[300px] rounded-full transition-transform duration-1000 ease-in-out"
+              className="mx-auto object-contain w-[90%] h-[90%] transition-transform duration-1000 ease-in-out"
             />
             {/* <KeyboardArrowRightIcon
             fontSize="large"

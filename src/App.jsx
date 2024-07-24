@@ -1,11 +1,8 @@
 import React from "react";
-import {
-  Route,
-  BrowserRouter as Router,
-  Routes,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Home from "./Pages/Home";
 import PricingPlan from "./Pages/PricingPlan";
+import "./App.css";
 
 const App = () => {
   return (

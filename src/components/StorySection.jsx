@@ -3,7 +3,7 @@
 
   const StorySection = () => {
     return (
-       <section className="w-full h-screen relative">
+       <section className="w-full md:h-screen relative">
           <h2 className="text-2xl text-center font-semibold bg-secondary p-3 text-white">Our Story: Sidharth's Journey to Quality Education</h2>
         <div className="">
           <video 

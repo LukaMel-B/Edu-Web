@@ -1,15 +1,20 @@
-import React from 'react';
-import HeroSection from './components/HeroSection';
-import StorySection from './components/StorySection';
-import CoursesSection from './components/CoursesSection';
+import React from "react";
+import {
+  Route,
+  BrowserRouter as Router,
+  Routes,
+} from "react-router-dom";
+import Home from "./Pages/Home";
+import PricingPlan from "./Pages/PricingPlan";
 
 const App = () => {
   return (
-    <div className='bg-white'>
-      <HeroSection />
-      <StorySection />
-      <CoursesSection />
-    </div>
+    <Router>
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route path="/pricingplan" element={<PricingPlan />} />
+      </Routes>
+    </Router>
   );
 };
 

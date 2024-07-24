@@ -1,15 +1,20 @@
-import React from 'react';
-import VideoPlaceholder from "../assets/VideoPlaceholder.png";
+  import React from 'react';
+  import OurStory from "../assets/OurStory.mp4";
 
-const StorySection = () => {
-  return (
-    <section className="text-center">
-      <h2 className="text-base font-semibold bg-secondary p-2 text-white">Our Story: Sidharth's Journey to Quality Education</h2>
-      <div className="mt-4">
-        <img src={VideoPlaceholder} alt="Our Story" className="mx-auto rounded-lg shadow-lg"/>
-      </div>
-    </section>
-  );
-};
+  const StorySection = () => {
+    return (
+      <section className="">
+        <h2 className="text-base text-center font-semibold bg-secondary p-2 text-white">Our Story: Sidharth's Journey to Quality Education</h2>
+        <div className="">
+          <video 
+            src={OurStory} 
+            alt="Our Story" 
+            className="mx-auto rounded-lg md:w-10/12 md:h-[300px] mt-6 md:mt-10" 
+            controls 
+          />
+        </div>
+      </section>
+    );
+  };
 
-export default StorySection;
+  export default StorySection;

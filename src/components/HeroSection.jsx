@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import PersonalizedLearning from "../assets/PersonalizedLearning.svg";
-import Slider2 from "../assets/Slider2.svg";
-import Slider3 from "../assets/Slider3.svg";
+import PersonalizedLearning from "../assets/PersonalizedLearning1.svg";
+import Slider2 from "../assets/Slider21.svg";
+import Slider3 from "../assets/Slider31.svg";
 import Logo from "../assets/Logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
@@ -33,7 +33,7 @@ const HeroSection = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
-    }, 4000); // Reduced the interval time to 3000ms for a better slider view
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
@@ -46,48 +46,31 @@ const HeroSection = () => {
   };
 
   return (
-    <section className="container mx-auto">
-      <div className="bg-primary">
-        <img src={Logo} alt="logo" className="w-20 h-20 md:w-24 md:h-24" />
-      </div>
-      <div className="p-2 md:p-6 h-[260px] md:h-[300px] flex md:flex-row justify-center items-start md:items-center bg-primary" style={{borderRadius: "0 0 70px 70px"}}>
-        <div className="flex-1 p-2">
-          <h1 className="text-sm md:text-2xl font-bold text-secondary">
-            {slides[currentSlide].title}
-          </h1>
-          <p className="mt-4 text-xs md:text-lg">{slides[currentSlide].desc}</p>
-          {slides[currentSlide].button && (
-            <button className="mt-2 px-4 py-1.5 bg-blue-500 text-white rounded-full">
-              {slides[currentSlide].button}
-            </button>
-          )}
-        </div>
-        <div className="flex-1  md:mt-0 ">
-          {/* <KeyboardArrowLeftIcon
-            fontSize="large"
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 hover:text-blue-500"
-            onClick={prevSlide}
-          /> */}
-          <img
-            src={slides[currentSlide].image}
-            alt="Slide Image"
-            className="mx-auto object-cover w-full md:w-[500px] h-[160px] md:h-[300px] rounded-full transition-transform duration-1000 ease-in-out"
-          />
-          {/* <KeyboardArrowRightIcon
-            fontSize="large"
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 cursor-pointer text-gray-400 hover:text-blue-500"
-            onClick={nextSlide}
-          /> */}
+    <section className="w-full h-screen relative">
+      <div className="relative w-full h-full bg-primary"
+           style={{ clipPath: "polygon(0% 0%, 100% 0%, 100% 87%, 85% 100%, 17% 100%, 0% 87%)" }}>
+        <img src={Logo} alt="logo" className="absolute top-4 left-4 w-40 h-40 md:w-44 md:h-44 z-20" />
+        <div className="relative w-full h-full flex md:flex-row flex-col items-start md:items-center bg-primary px-8 md:px-16">
+          <div className="flex-1 py-4 md:py-8 overflow-hidden">
+            <h1 className="text-5xl md:text-[3rem] font-bold text-secondary leading-[3.2rem]">
+              {slides[currentSlide].title}
+            </h1>
+            <p className="mt-6 text-4xl  md:text-[1.5rem]">{slides[currentSlide].desc}</p>
+            {slides[currentSlide].button && (
+              <button className="mt-6 mt-2 px-7 py-4 bg-blue-500 text-white text-xl rounded-full">
+                {slides[currentSlide].button}
+              </button>
+            )}
+          </div>
+          <div className="flex-1 md:mt-0 flex justify-center items-center relative py-4 md:py-8 h-full">
+            <img
+              src={slides[currentSlide].image}
+              alt="Slide Image"
+              className="mx-auto object-contain w-[90%] h-[90%] transition-transform duration-1000 ease-in-out"
+            />
+          </div>
         </div>
       </div>
-      {/* <div className="flex justify-center mt-4">
-        {slides.map((_, index) => (
-          <div
-            key={index}
-            className={`w-2 h-2 mx-1 rounded-full ${index === currentSlide ? "bg-blue-500" : "bg-gray-300"}`}
-          ></div>
-        ))}
-      </div> */}
     </section>
   );
 };

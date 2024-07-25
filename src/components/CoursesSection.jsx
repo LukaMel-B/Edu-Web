@@ -22,8 +22,8 @@ const CoursesSection = () => {
 
   return (
     <section className="text-center py-12 relative md:mt-12">
-      <div className='bg-blue-100 py-9 px-2'>
-        <h2 className="absolute top-6 left-0 right-0 text-xl bg-secondary text-white w-max mx-auto px-6 py-1.5 rounded-full">Courses Offered</h2>
+      <div className='bg-blue-100 py-9 px-2 mt-10'>
+        <h2 className="absolute top-16 left-0 right-0 text-xl bg-secondary text-white w-max mx-auto px-6 py-1.5 rounded-full">Courses Offered</h2>
         <div className="flex justify-center gap-3 md:gap-4 w-[100%]">
           {courses.map((course) => (
             <div key={course.id} className="w-[100%] md:w-[300px] h-[150px] md:h-[150px] lg:h-[200px] p-2 bg-white rounded-lg shadow-lg  flex flex-col justify-center items-center relative" style={{ backgroundImage: `url(${course.image})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center' }}>

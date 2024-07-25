@@ -6,7 +6,6 @@ const FormTutorPage = () => {
   return (
     <div className="lato-regular">
       <FormTutor />
-      <Footer />
     </div>
   );
 }

@@ -6,7 +6,6 @@ const FormMeritPage = () => {
   return (
     <div className="lato-regular">
       <FormMerit />
-      <Footer />
     </div>
   );
 }

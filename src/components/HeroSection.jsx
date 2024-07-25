@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
-import PersonalizedLearning from "../assets/PersonalizedLearning.svg";
+import { useNavigate } from "react-router-dom";
 import Slider2 from "../assets/Slider2.svg";
 import Slider3 from "../assets/Slider3.svg";
+import PersonalizedLearning from "../assets/PersonalizedLearning.svg";
 import Logo from "../assets/Logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardArrowLeftIcon from "@mui/icons-material/KeyboardArrowLeft";
@@ -12,12 +13,14 @@ const slides = [
     desc: "Experience personalized, tech-focused learning with one-on-one tuition at your home. Our expert tutors tailor their teaching to meet each student's unique needs and pace.",
     button: "Book a Demo",
     image: PersonalizedLearning,
+    path:"/book-demo",
   },
   {
     title: "Innovative Tech Courses for Young Minds",
     desc: "From AI to Robotics, explore our range of tech courses designed to equip students with the skills of the future.",
     button: "Tuition Enquiry",
     image: Slider2,
+    path:"/tutition-enquiry",
   },
   {
     title: "Shaping Futures Together",
@@ -29,7 +32,7 @@ const slides = [
 
 const HeroSection = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
@@ -44,9 +47,14 @@ const HeroSection = () => {
   const prevSlide = () => {
     setCurrentSlide((currentSlide - 1 + slides.length) % slides.length);
   };
+  const handleClick = (path) => {
+    navigate(path);
+  };
+
 
   return (
-    <div className="hero-container">
+
+    <div className="hero-container pb-5 md:pb-20">
       <section className="mx-auto hero-section">
         <div className="bg-primary">
           <img src={Logo} alt="logo" className="w-20 h-20 md:w-40 md:h-40" />
@@ -60,7 +68,8 @@ const HeroSection = () => {
               {slides[currentSlide].desc}
             </p>
             {slides[currentSlide].button && (
-              <button className="mt-5 px-7 py-4 bg-blue-500 text-white text-[1.5rem] text-sm rounded-full self-start">
+              <button className="mt-5 px-7 py-4 bg-blue-500 text-white text-[1.5rem] text-sm rounded-full self-start"
+              onClick={() => handleClick(slides[currentSlide].path)}>
 
                 {slides[currentSlide].button}
               </button>
